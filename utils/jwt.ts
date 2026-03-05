@@ -35,3 +35,17 @@ export async function verifyToken(token: string) {
     return null;
   }
 }
+
+export async function logoutUser() {
+  const cookieStore = await cookies();
+
+  cookieStore.set("token", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    maxAge: 0,
+  });
+
+  return { message: "Logged out successfully" };
+}
