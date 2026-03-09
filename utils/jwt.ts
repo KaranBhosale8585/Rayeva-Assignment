@@ -8,7 +8,6 @@ export async function generateToken(user: any): Promise<string> {
     name: user.name,
     id: user._id,
     email: user.email,
-    role: user.role,
   })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
