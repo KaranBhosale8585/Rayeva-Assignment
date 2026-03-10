@@ -11,8 +11,6 @@ export async function proxy(req: NextRequest) {
   const token = req.cookies.get("token")?.value;
   const user = token ? await verifyToken(token) : null;
 
-  console.log(token, user)
-
   if (user && authPages.includes(pathname)) {
     return NextResponse.redirect(new URL("/", req.url));
   }
