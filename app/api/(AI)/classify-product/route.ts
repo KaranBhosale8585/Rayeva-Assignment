@@ -1,17 +1,21 @@
 import { getCurrentUser } from "@/utils/getCurrentUser";
 import { GoogleGenAI } from "@google/genai";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
     const { name, description } = await req.json();
 
     if (!name || !description) {
-      return new Response("Missing fields", { status: 400 });
+      return NextResponse.json(
+        { message: "Missing required fields" },
+        { status: 400 },
+      );
     }
 
     const user = await getCurrentUser();
     if (!user) {
-      return new Response("Unauthorized", { status: 401 });
+      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
     const prompt = `
@@ -50,7 +54,8 @@ Description: ${description}
       headers: { "Content-Type": "application/json" },
     });
   } catch (error: any) {
-    return new Response(JSON.stringify({ error: error.message }), {
+    return NextResponse.json({
+      error: error.message,
       status: 500,
     });
   }
