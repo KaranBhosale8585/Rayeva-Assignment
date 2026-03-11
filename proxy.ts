@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { verifyToken } from "./utils/jwt";
 
-const protectedRoutes = ["/"];
+const protectedRoutes = ["/", "/classify-product", "/proposal-generator"];
 const authPages = ["/login", "/register"];
 
 export async function proxy(req: NextRequest) {
@@ -16,12 +16,12 @@ export async function proxy(req: NextRequest) {
   }
 
   if (!user && protectedRoutes.includes(pathname)) {
-    return NextResponse.redirect(new URL("/", req.url));
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/login", "/register",],
+  matcher: ["/", "/login", "/register", "/classify-product", "/proposal-generator"],
 };
