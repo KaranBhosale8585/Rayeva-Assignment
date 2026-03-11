@@ -17,6 +17,12 @@ https://github.com/KaranBhosale8585/Rayeva-Assignment
 
 ---
 
+## Demo Video
+
+https://drive.google.com/file/d/16olwjmKvAABix0lWcAbJTlNtzJ43HmG3/view?usp=sharing
+
+---
+
 ## Features
 
 ### 1. AI Product Category Generator
@@ -169,12 +175,6 @@ The project is deployed on **Vercel**.
 
 Live URL:  
 https://rayeva-assignment-zeta.vercel.app/
-
----
-
-## Demo Video
-
-Demo video will be added soon.
 
 ---
 
