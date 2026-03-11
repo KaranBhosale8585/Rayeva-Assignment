@@ -62,6 +62,13 @@ export default function Header() {
           >
             Proposal Generator
           </Link>
+
+          <Link
+            href="/ai-history"
+            className="hover:text-green-600 transition"
+          >
+            AI History
+          </Link>
         </nav>
 
         <div className="hidden md:block">
@@ -97,6 +104,14 @@ export default function Header() {
               className="hover:text-green-600"
             >
               Proposal Generator
+            </Link>
+
+            <Link
+              href="/ai-history"
+              onClick={() => setOpen(false)}
+              className="hover:text-green-600"
+            >
+              AI History
             </Link>
 
             <button

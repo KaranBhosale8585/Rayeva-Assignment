@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
-       
         <div className="flex items-center gap-2 text-white font-semibold">
           <Sparkles size={18} />
           Rayeva AI
@@ -22,6 +21,10 @@ export default function Footer() {
 
           <Link href="/proposal-generator" className="hover:text-white">
             Proposal Generator
+          </Link>
+
+          <Link href="/ai-history" className="hover:text-white">
+            AI History
           </Link>
         </div>
 

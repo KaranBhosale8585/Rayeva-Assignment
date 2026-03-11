@@ -1,3 +1,4 @@
+import { ProductLog } from "@/models/AiLog";
 import { getCurrentUser } from "@/utils/getCurrentUser";
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
@@ -53,6 +54,16 @@ Description: ${description}
     if (!resp.text) {
       return NextResponse.json({ message: "AI Error" }, { status: 500 });
     }
+
+    const parsed = JSON.parse(resp.text);
+
+    await ProductLog.create({
+      userId: user._id,
+      productName: name,
+      description,
+      response: parsed,
+    });
+
 
     return new Response(JSON.stringify({ result: resp.text }), {
       headers: { "Content-Type": "application/json" },

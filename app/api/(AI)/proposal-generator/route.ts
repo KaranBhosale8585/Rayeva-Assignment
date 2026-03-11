@@ -1,3 +1,4 @@
+import { ProposalLog } from "@/models/AiLog";
 import { getCurrentUser } from "@/utils/getCurrentUser";
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
@@ -58,6 +59,16 @@ Return STRICT JSON:
     if (!resp.text) {
       return NextResponse.json({ message: "AI Error" }, { status: 500 });
     }
+
+    const parsed = JSON.parse(resp.text);
+
+    await ProposalLog.create({
+      userId: user._id,
+      budget,
+      event_type,
+      guests,
+      response: parsed,
+    });
 
     return new Response(JSON.stringify({ result: resp.text }), {
       headers: { "Content-Type": "application/json" },
