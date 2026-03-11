@@ -55,6 +55,10 @@ Return STRICT JSON:
       contents: prompt,
     });
 
+    if (!resp.text) {
+      return NextResponse.json({ message: "AI Error" }, { status: 500 });
+    }
+
     return new Response(JSON.stringify({ result: resp.text }), {
       headers: { "Content-Type": "application/json" },
     });
