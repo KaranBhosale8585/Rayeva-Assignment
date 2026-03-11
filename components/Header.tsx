@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, LogOut, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -20,11 +21,17 @@ export default function Header() {
 
       const data = await res.json();
 
-      if (data.success) {
+      if (!res.ok) {
+        toast.error(data.message || "Logout failed. Please try again.");
+        throw new Error(data.message || "Logout failed");
+      }
+
+      if (res.ok) {
+        toast.success(data.message || "Logged out successfully.");
         router.push("/login");
       }
     } catch (err) {
-      console.error("Logout error", err);
+      toast.error("Logout failed. Please try again.");
     } finally {
       setLoading(false);
     }
