@@ -36,14 +36,18 @@ export default function Footer() {
             <Github size={18} />
           </a>
 
-          <a href="karanbhosale8586@email.com" className="hover:text-white">
+          <a
+            href="mailto:karanbhosale8586@email.com"
+            className="hover:text-white"
+          >
             <Mail size={18} />
           </a>
         </div>
       </div>
 
       <div className="text-center text-xs text-gray-500 pb-3">
-        © {new Date().getFullYear()} Rayeva AI
+        © {new Date().getFullYear()} Rayeva AI Assignment | Built by Karan
+        Bhosale
       </div>
     </footer>
   );
