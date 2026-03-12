@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import { User, Mail, Lock } from "lucide-react";
-// import Header from "@/components/Header";
 import toast from "react-hot-toast";
 
 export default function Register() {
