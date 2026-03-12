@@ -1,36 +1,186 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rayeva AI Systems Assignment
 
-## Getting Started
+This project is an AI-powered web application built as part of the **Rayeva AI Systems assignment**.  
+It demonstrates how AI can be used to automate **product classification** and generate **B2B procurement proposals**.
 
-First, run the development server:
+---
+
+## Live Demo
+
+https://rayeva-assignment-zeta.vercel.app/
+
+---
+
+## GitHub Repository
+
+https://github.com/KaranBhosale8585/Rayeva-Assignment
+
+---
+
+## Demo Video
+
+https://drive.google.com/file/d/16olwjmKvAABix0lWcAbJTlNtzJ43HmG3/view?usp=sharing
+
+---
+
+## Features
+
+### 1. AI Product Category Generator
+Automatically classifies a product and generates useful metadata.
+
+**Input**
+- Product Name
+- Product Description
+
+**AI Output**
+- Primary Category
+- Sub Category
+- SEO Tags
+- Sustainability Filters
+
+Example Response:
+
+```json
+{
+  "primary_category": "Drinkware",
+  "sub_category": "Water Bottles",
+  "seo_tags": ["eco friendly bottle", "bamboo bottle", "reusable bottle"],
+  "sustainability_filters": ["plastic-free", "reusable", "eco-friendly"]
+}
+```
+
+---
+
+### 2. AI Event Proposal Generator
+
+Generates a sustainable **B2B procurement proposal** for events.
+
+**Input**
+- Event Type
+- Budget
+- Number of Guests
+
+**AI Output**
+- Product Mix
+- Budget Allocation
+- Cost Breakdown
+- Sustainability Impact
+
+Example Response:
+
+```json
+{
+  "product_mix": [
+    {
+      "product_name": "Bamboo Water Bottle",
+      "quantity": 100,
+      "unit_price": 150,
+      "total_price": 15000
+    }
+  ],
+  "budget_summary": {
+    "total_allocated": 45000,
+    "remaining_budget": 5000
+  },
+  "impact_positioning": "Promotes sustainable alternatives and avoids single-use plastics."
+}
+```
+
+---
+
+## AI History
+
+The application includes an **AI History Dashboard** where users can view:
+
+- Product classification history
+- Event proposal history
+- AI responses stored in database
+- Timestamped activity logs
+
+---
+
+## Tech Stack
+
+**Frontend**
+- Next.js
+- React
+- Tailwind CSS
+- Lucide Icons
+
+**Backend**
+- Next.js API Routes
+- MongoDB
+- Mongoose
+
+**AI Integration**
+- Google Generative AI API
+
+**Deployment**
+- Vercel
+
+---
+
+## Project Structure
+
+```
+app/
+ ├── classify-product
+ ├── proposal-generator
+ ├── ai-history
+ ├── api
+components/
+lib/
+models/
+utils/
+```
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/KaranBhosale8585/Rayeva-Assignment.git
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file:
 
-## Learn More
+```
+MONGODB_URI=your_mongodb_connection
+GOOGLE_AI_API_KEY=your_google_ai_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project is deployed on **Vercel**.
 
-## Deploy on Vercel
+Live URL:  
+https://rayeva-assignment-zeta.vercel.app/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**Karan Bhosale**
+
+GitHub  
+https://github.com/KaranBhosale8585
